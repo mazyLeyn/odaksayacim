@@ -26,7 +26,10 @@
 <script src="script.js"></script>
 </body>
 </html>
-<style>:root {
+
+<style>
+  
+  :root {
   --ana-renk: #4A90E2;
   --arka-plan: #1e1e1e;
   --kart-renk: #2a2a2a;
@@ -35,7 +38,7 @@
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   background: var(--arka-plan);
   color: var(--yazi-renk);
   display: flex;
@@ -44,18 +47,52 @@ body {
   height: 100vh;
 }
 
-/* KART BÜYÜTÜLDÜ */
+/* Kart daha büyük ve sade */
 .container {
   background: var(--kart-renk);
   width: 80vw;
-  max-width: 600px;
+  max-width: 800px;
   padding: 60px 40px;
-  border-radius: 20px;
+  border-radius: 25px;
   text-align: center;
-  box-shadow: 0 0 25px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
 }
 
-/* KRONOMET*
+/* KRONOMETRE ODAK NOKTASI */
+#timer {
+  font-size: 110px;
+  font-weight: bold;
+  margin: 50px 0;
+  letter-spacing: 4px;
+}
+
+/* MODERN BUTON GRUBU */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Modern buton tasarım */
+button {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: white;
+  padding: 15px 35px;
+  border-radius: 14px;
+  font-size: 16px;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+/* Hover efekti */
+button:hover {
+  background: var(--ana-renk);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(74,144,226,0.4);
+}
+
 
 </style>
 
