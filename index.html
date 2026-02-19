@@ -4,39 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OS - Odak Sayacı</title>
-<link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<div class="container">
-
-<h1>⏱️ Odak Sayacı</h1>
-
-<div id="timer">00:00:00</div>
-  <p class="motivation">Küçük odaklar büyük sonuçlar doğurur.</p>
-  <p class="version">v1.0.0</p>
-
-
-
-<div class="buttons">
-<button onclick="startTimer()">Başlat</button>
-<button onclick="pauseTimer()">Duraklat</button>
-<button onclick="resetTimer()">Sıfırla</button>
-</div>
-
-</div>
-
-<script src="script.js"></script>
-</body>
-  
-  <div class="version">v1.0.0</div>
-
-</html>
 
 <style>
-  
-  :root {
+:root {
   --ana-renk: #4A90E2;
   --arka-plan: #1e1e1e;
   --kart-renk: #2a2a2a;
@@ -54,8 +24,8 @@ body {
   height: 100vh;
 }
 
-/* Kart daha büyük ve sade */
 .container {
+  position: relative;
   background: var(--kart-renk);
   width: 80vw;
   max-width: 800px;
@@ -65,23 +35,19 @@ body {
   box-shadow: 0 10px 40px rgba(0,0,0,0.6);
 }
 
-/* KRONOMETRE ODAK NOKTASI */
 #timer {
-
   font-size: clamp(45px, 10vw, 110px);
   font-weight: bold;
   margin: 50px 0;
   letter-spacing: 4px;
 }
 
-/* MODERN BUTON GRUBU */
 .buttons {
   display: flex;
   justify-content: center;
   gap: 20px;
 }
 
-/* Modern buton tasarım */
 button {
   background: rgba(255,255,255,0.08);
   border: 1px solid rgba(255,255,255,0.15);
@@ -90,88 +56,52 @@ button {
   border-radius: 14px;
   font-size: 16px;
   cursor: pointer;
-  backdrop-filter: blur(5px);
   transition: all 0.3s ease;
 }
 
-/* Hover efekti */
 button:hover {
   background: var(--ana-renk);
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(74,144,226,0.4);
 }
 
-
-  .running {
-  color: var(--ana-renk);
-  text-shadow: 0 0 20px rgba(74,144,226,0.7);
-}
-
-  .motivation {
+.motivation {
   margin-top: 25px;
   font-size: 15px;
   opacity: 0.7;
-  letter-spacing: 1px;
 }
 
-  /* 📱 Tablet */
-@media (max-width: 900px) {
-  .container {
-    width: 90vw;
-    padding: 50px 25px;
-  }
-
-  #timer {
-    font-size: 80px;
-  }
-
-  button {
-    padding: 14px 25px;
-    font-size: 15px;
-  }
-}
-
-/* 📱 Telefon */
-@media (max-width: 600px) {
-  .container {
-    width: 92vw;
-    padding: 40px 20px;
-  }
-
-  #timer {
-    font-size: 55px;
-    letter-spacing: 2px;
-  }
-
-  .buttons {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  button {
-    width: 100%;
-  }
-
-  h1 {
-    font-size: 22px;
-  }
-}
-
+/* Sürüm */
 .version {
   position: absolute;
   bottom: 15px;
   right: 20px;
   font-size: 12px;
-  opacity: 0.4;
+  opacity: 0.5;
 }
-
-  .container {
-  position: relative;
-}
-
-
-
 </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>⏱️ Odak Sayacı</h1>
+
+<div id="timer">00:00:00</div>
+
+<p class="motivation">Küçük odaklar büyük sonuçlar doğurur.</p>
+
+<div class="buttons">
+<button onclick="startTimer()">Başlat</button>
+<button onclick="pauseTimer()">Duraklat</button>
+<button onclick="resetTimer()">Sıfırla</button>
+</div>
+
+<!-- Sürüm burada olmalı -->
+<div class="version">v1.0.0</div>
+
+</div>
 
 <script>
 let seconds = 0;
@@ -222,3 +152,5 @@ function resetTimer() {
 }
 </script>
 
+</body>
+</html>
