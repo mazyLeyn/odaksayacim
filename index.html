@@ -109,6 +109,16 @@ button:hover {
   text-shadow: 0 0 20px rgba(74,144,226,0.7);
 }
 
+  #timer.running {
+  color: var(--ana-renk) !important;
+  text-shadow: 0 0 20px rgba(74,144,226,0.7);
+}
+
+#timer.paused {
+  color: #ff4d4d !important;
+  text-shadow: 0 0 15px rgba(255, 77, 77, 0.6);
+}
+
 
 </style>
 </head>
@@ -147,7 +157,9 @@ function updateDisplay() {
 
   document.getElementById("timer").textContent = `${h}:${m}:${s}`;
 }
-
+  
+const timer = document.getElementById("timer");
+  
 function startTimer() {
   if (interval) return;
 
