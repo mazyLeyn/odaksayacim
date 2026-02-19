@@ -24,8 +24,8 @@ body {
   height: 100vh;
 }
 
+/* Kart */
 .container {
-  position: relative;
   background: var(--kart-renk);
   width: 80vw;
   max-width: 800px;
@@ -35,13 +35,22 @@ body {
   box-shadow: 0 10px 40px rgba(0,0,0,0.6);
 }
 
+/* Kronometre */
 #timer {
   font-size: clamp(45px, 10vw, 110px);
   font-weight: bold;
-  margin: 50px 0;
+  margin: 40px 0;
   letter-spacing: 4px;
 }
 
+/* Motivasyon */
+.motivation {
+  font-size: 15px;
+  opacity: 0.7;
+  margin-bottom: 30px;
+}
+
+/* Butonlar */
 .buttons {
   display: flex;
   justify-content: center;
@@ -65,15 +74,20 @@ button:hover {
   box-shadow: 0 5px 15px rgba(74,144,226,0.4);
 }
 
-.motivation {
-  margin-top: 25px;
-  font-size: 15px;
-  opacity: 0.7;
+/* Mobil */
+@media (max-width: 600px) {
+  .buttons {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
 }
 
 /* Sürüm */
 .version {
-  position: absolute;
+  position: fixed;
   bottom: 15px;
   right: 20px;
   font-size: 12px;
@@ -98,16 +112,14 @@ button:hover {
 <button onclick="resetTimer()">Sıfırla</button>
 </div>
 
-<!-- Sürüm burada olmalı -->
-<div class="version">v1.0.0</div>
-
 </div>
+
+<div class="version">v1.0.0</div>
 
 <script>
 let seconds = 0;
 let minutes = 0;
 let hours = 0;
-
 let interval = null;
 
 function updateDisplay() {
@@ -124,12 +136,12 @@ function startTimer() {
   interval = setInterval(() => {
     seconds++;
 
-    if (seconds === 60) {
+    if (seconds >= 60) {
       seconds = 0;
       minutes++;
     }
 
-    if (minutes === 60) {
+    if (minutes >= 60) {
       minutes = 0;
       hours++;
     }
