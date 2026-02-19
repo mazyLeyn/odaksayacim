@@ -99,6 +99,16 @@ button:hover {
   backdrop-filter: blur(6px);
 }
 
+  .paused {
+  color: #ff4d4d;
+  text-shadow: 0 0 15px rgba(255, 77, 77, 0.6);
+}
+
+  .running {
+  color: var(--ana-renk);
+  text-shadow: 0 0 20px rgba(74,144,226,0.7);
+}
+
 
 </style>
 </head>
@@ -141,6 +151,9 @@ function updateDisplay() {
 function startTimer() {
   if (interval) return;
 
+  document.getElementById("timer").classList.remove("paused");
+  document.getElementById("timer").classList.add("running");
+
   interval = setInterval(() => {
     seconds++;
 
@@ -158,10 +171,15 @@ function startTimer() {
   }, 1000);
 }
 
+
 function pauseTimer() {
   clearInterval(interval);
   interval = null;
+
+  document.getElementById("timer").classList.remove("running");
+  document.getElementById("timer").classList.add("paused");
 }
+
 
 function resetTimer() {
   pauseTimer();
@@ -169,7 +187,10 @@ function resetTimer() {
   minutes = 0;
   hours = 0;
   updateDisplay();
+
+  document.getElementById("timer").classList.remove("paused");
 }
+
 </script>
 
 </body>
